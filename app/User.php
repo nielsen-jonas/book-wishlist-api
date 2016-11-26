@@ -38,4 +38,12 @@ class User extends Authenticatable
     {
         $this->attributes['password'] = Hash::make($value);
     }
+
+    /**
+     * Get all of the books for the user
+     */
+    public function books()
+    {
+        return $this->hasMany('App\Book');
+    }
 }
