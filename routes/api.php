@@ -31,8 +31,11 @@ $api->version('v1', function (Router $api) {
         ]);
     });
 
-    $api->get('book', 'App\\Api\\V1\\Controllers\\BookController@index');
-    $api->post('book/store', 'App\\Api\\V1\\Controllers\\BookController@store');
+    $api->get('books', 'App\\Api\\V1\\Controllers\\BookController@index');
+    $api->get('books/{id}', 'App\\Api\\V1\\Controllers\\BookController@show');
+    $api->post('books', 'App\\Api\\V1\\Controllers\\BookController@store');
+    $api->put('books/{id}', 'App\\Api\\V1\\Controllers\\BookController@update');
+    $api->delete('books/{id}', 'App\\Api\\V1\\Controllers\\BookController@destroy');
 
     $api->get('hello', function() {
         return response()->json([
