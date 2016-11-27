@@ -2,6 +2,7 @@
 
 namespace App\Api\V1\Controllers;
 
+use App\Http\Controllers\Controller;
 use JWTAuth;
 use App\Book;
 use Dingo\Api\Routing\Helpers;
